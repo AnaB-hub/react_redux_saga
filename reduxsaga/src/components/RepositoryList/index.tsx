@@ -10,7 +10,7 @@ interface Props {
 }
 
 interface State {
-  newRepository?: string
+  newRepository?: string;
 }
 
 export default class RepositoryList extends Component<Props, State> {
@@ -28,8 +28,10 @@ export default class RepositoryList extends Component<Props, State> {
 
     return (
       <ul>
-        {repositories.map(repository => <li>{repository.}</li>)}
+        {repositories.map((repository) => (
+          <li>{repository.id}</li>
+        ))}
       </ul>
-    )
+    );
   }
 }
