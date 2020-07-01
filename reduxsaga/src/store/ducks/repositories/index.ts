@@ -1,10 +1,14 @@
 import { Reducer } from "redux";
 
 import { RepositoriesState, RepositoriesTypes } from "./types";
-import { action } from "typesafe-actions";
 
 const INITIAL_STATE: RepositoriesState = {
-  data: [],
+  data: [
+    {
+      id: 1,
+      name: "Teste 10:30",
+    },
+  ],
   error: false,
   loading: false,
 };
