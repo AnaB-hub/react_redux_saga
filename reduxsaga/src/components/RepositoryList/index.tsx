@@ -20,22 +20,24 @@ interface DispatchProps {
   loadRequest(): void;
 }
 
-/**
- * Qualquer outra propriedade
- */
-interface OwnProps {}
-
-type Props = StateProps & DispatchProps & OwnProps;
+type Props = StateProps & DispatchProps;
 
 class RepositoryList extends Component<Props> {
   componentDidMount() {
     const { loadRequest } = this.props;
+    loadRequest();
   }
 
   render() {
     const { repositories } = this.props;
 
-    return <ul>{repositories.map((repository) => repository.name)}</ul>;
+    return (
+      <ul>
+        {repositories.map((repository) => (
+          <li>{repository.name}</li>
+        ))}
+      </ul>
+    );
   }
 }
 
